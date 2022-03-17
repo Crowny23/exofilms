@@ -3,8 +3,10 @@ const searchS = document.getElementById('titleS');
 // requête ajax pour communiquer avec la page select posts en php
 searchS.addEventListener('keyup', function () {
     const input = searchS.value;
-    searchFilmS(input);
-    suggAdd();
+    console.log(input)
+    if(input.length > 2){
+        searchFilmS(input);   
+    }
 })
 
 function searchFilmS(dat) {
@@ -19,10 +21,10 @@ function searchFilmS(dat) {
 
             if (dat != '') {
                 for (let data of datas) {
-                    listDom += '<a href="#" class="suggestion">' + data.title + '</a>';
+                    listDom += '<div class="suggestion">' + data.title + '</div>';
                 }
                 sugg.innerHTML = listDom;
-
+                suggAdd();
             } else {
                 listDom = '';
                 sugg.innerHTML = listDom;
@@ -35,15 +37,10 @@ function searchFilmS(dat) {
 function suggAdd() {
     const searchS = document.getElementById('titleS');
     const btnSugg = document.getElementsByClassName('suggestion');
-    console.log(btnSugg);
-    alert('coucou');
     for (let btn of btnSugg) {
-        alert('coucous');
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('coucou1');
             searchS.value = btn.innerHTML;
         })
     }
-
 }

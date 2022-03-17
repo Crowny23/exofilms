@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="#" method="GET">
+<form action="" method="POST">
         <label for="titleS">Titre du film</label>
         <input type="text" name="title" id="titleS">
         <div id="sugg"></div>

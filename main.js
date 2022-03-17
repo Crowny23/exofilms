@@ -27,7 +27,7 @@ function initData() {
     }
     xhr.send();
 }
-function search(data){
+function search(dat){
     const listUl = document.getElementById('list-film');
     const xhr = new XMLHttpRequest();
     xhr.open('POST', './foundFilms.php', true);
@@ -43,5 +43,5 @@ function search(data){
             listUl.innerHTML = listDom;
         }
     }
-    xhr.send('title='+ data);
+    xhr.send('title='+ dat);
 }
